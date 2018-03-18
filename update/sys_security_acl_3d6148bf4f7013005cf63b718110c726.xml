@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<record_update table="sys_security_acl">
+    <sys_security_acl action="INSERT_OR_UPDATE">
+        <active>true</active>
+        <admin_overrides>true</admin_overrides>
+        <advanced>false</advanced>
+        <condition/>
+        <description>Default access control on x_195638_cisc475_s_students</description>
+        <name>x_195638_cisc475_s_students</name>
+        <operation display_value="delete">delete</operation>
+        <script/>
+        <sys_class_name>sys_security_acl</sys_class_name>
+        <sys_created_by>admin</sys_created_by>
+        <sys_created_on>2018-03-18 20:55:26</sys_created_on>
+        <sys_id>3d6148bf4f7013005cf63b718110c726</sys_id>
+        <sys_mod_count>0</sys_mod_count>
+        <sys_name>x_195638_cisc475_s_students</sys_name>
+        <sys_package display_value="CISC475 Sprint Grades" source="x_195638_cisc475_s">80ae9f674f3013005cf63b718110c763</sys_package>
+        <sys_policy/>
+        <sys_scope display_value="CISC475 Sprint Grades">80ae9f674f3013005cf63b718110c763</sys_scope>
+        <sys_update_name>sys_security_acl_3d6148bf4f7013005cf63b718110c726</sys_update_name>
+        <sys_updated_by>admin</sys_updated_by>
+        <sys_updated_on>2018-03-18 20:55:26</sys_updated_on>
+        <type display_value="record">record</type>
+    </sys_security_acl>
+</record_update>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Scores" max_length="40" name="x_195638_cisc475_s_scores" type="collection">
+        <element label="Comment" max_length="40" name="comment" type="string"/>
+        <element choice="1" label="Score" max_length="40" name="score" type="choice">
+            <choice/>
+        </element>
+        <element label="Scoree" max_length="32" name="scoree" reference="x_195638_cisc475_s_students" type="reference"/>
+        <element label="Scorer" max_length="32" name="scorer" reference="x_195638_cisc475_s_students" type="reference"/>
+        <element label="Sprint" max_length="40" name="sprint" type="integer"/>
+        <index name="index">
+            <element name="scorer"/>
+        </index>
+        <index name="index2">
+            <element name="scoree"/>
+        </index>
+    </element>
+</database>

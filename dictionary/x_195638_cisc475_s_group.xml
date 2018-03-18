@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database>
+    <element label="Group" max_length="40" name="x_195638_cisc475_s_group" type="collection">
+        <element label="Group Name" max_length="40" name="group_name" type="string"/>
+    </element>
+</database>
