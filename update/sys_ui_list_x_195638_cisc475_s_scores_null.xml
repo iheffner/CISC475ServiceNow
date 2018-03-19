@@ -3,78 +3,63 @@
     <sys_ui_list parent="" relationship="" sys_domain="global" table="x_195638_cisc475_s_scores" version="2" view="">
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>comment</element>
-            <list_id display_value="x_195638_cisc475_s_scores" element="NULL" name="x_195638_cisc475_s_scores" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">93ee1cc44f0113005cf63b718110c7d1</list_id>
+            <element>scoree.user.name</element>
+            <list_id display_value="x_195638_cisc475_s_scores" element="NULL" name="x_195638_cisc475_s_scores" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">09cd95444fc113005cf63b718110c735</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>0</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 17:42:54</sys_created_on>
-            <sys_id>9fee1cc44f0113005cf63b718110c7d1</sys_id>
+            <sys_created_on>2018-03-19 22:17:27</sys_created_on>
+            <sys_id>05cd95444fc113005cf63b718110c736</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 17:42:54</sys_updated_on>
+            <sys_updated_on>2018-03-19 22:17:27</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
             <element>score</element>
-            <list_id display_value="x_195638_cisc475_s_scores" element="NULL" name="x_195638_cisc475_s_scores" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">93ee1cc44f0113005cf63b718110c7d1</list_id>
+            <list_id display_value="x_195638_cisc475_s_scores" element="NULL" name="x_195638_cisc475_s_scores" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">09cd95444fc113005cf63b718110c735</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>1</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 17:42:54</sys_created_on>
-            <sys_id>97ee1cc44f0113005cf63b718110c7d2</sys_id>
+            <sys_created_on>2018-03-19 22:17:27</sys_created_on>
+            <sys_id>c9cd95444fc113005cf63b718110c736</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 17:42:54</sys_updated_on>
+            <sys_updated_on>2018-03-19 22:17:27</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>scoree</element>
-            <list_id display_value="x_195638_cisc475_s_scores" element="NULL" name="x_195638_cisc475_s_scores" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">93ee1cc44f0113005cf63b718110c7d1</list_id>
+            <element>sprint</element>
+            <list_id display_value="x_195638_cisc475_s_scores" element="NULL" name="x_195638_cisc475_s_scores" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">09cd95444fc113005cf63b718110c735</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>2</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 17:42:54</sys_created_on>
-            <sys_id>1bee1cc44f0113005cf63b718110c7d2</sys_id>
+            <sys_created_on>2018-03-19 22:17:27</sys_created_on>
+            <sys_id>4dcd95444fc113005cf63b718110c736</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 17:42:54</sys_updated_on>
+            <sys_updated_on>2018-03-19 22:17:27</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list_element action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
-            <element>scorer</element>
-            <list_id display_value="x_195638_cisc475_s_scores" element="NULL" name="x_195638_cisc475_s_scores" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">93ee1cc44f0113005cf63b718110c7d1</list_id>
+            <element>scorer.user.name</element>
+            <list_id display_value="x_195638_cisc475_s_scores" element="NULL" name="x_195638_cisc475_s_scores" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">09cd95444fc113005cf63b718110c735</list_id>
             <max_value>false</max_value>
             <min_value>false</min_value>
             <position>3</position>
             <sum>false</sum>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 17:42:54</sys_created_on>
-            <sys_id>9bee1cc44f0113005cf63b718110c7d2</sys_id>
+            <sys_created_on>2018-03-19 22:17:27</sys_created_on>
+            <sys_id>cdcd95444fc113005cf63b718110c736</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 17:42:54</sys_updated_on>
-        </sys_ui_list_element>
-        <sys_ui_list_element action="INSERT_OR_UPDATE">
-            <average_value>false</average_value>
-            <element>sprint</element>
-            <list_id display_value="x_195638_cisc475_s_scores" element="NULL" name="x_195638_cisc475_s_scores" parent="NULL" relationship="NULL" sys_domain="global" view="Default view">93ee1cc44f0113005cf63b718110c7d1</list_id>
-            <max_value>false</max_value>
-            <min_value>false</min_value>
-            <position>4</position>
-            <sum>false</sum>
-            <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 17:42:54</sys_created_on>
-            <sys_id>1fee1cc44f0113005cf63b718110c7d2</sys_id>
-            <sys_mod_count>0</sys_mod_count>
-            <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 17:42:54</sys_updated_on>
+            <sys_updated_on>2018-03-19 22:17:27</sys_updated_on>
         </sys_ui_list_element>
         <sys_ui_list action="INSERT_OR_UPDATE">
             <average_value>false</average_value>
@@ -88,10 +73,10 @@
             <sum>false</sum>
             <sys_class_name>sys_ui_list</sys_class_name>
             <sys_created_by>admin</sys_created_by>
-            <sys_created_on>2018-03-19 17:42:54</sys_created_on>
+            <sys_created_on>2018-03-19 22:17:27</sys_created_on>
             <sys_domain>global</sys_domain>
             <sys_domain_path>/</sys_domain_path>
-            <sys_id>93ee1cc44f0113005cf63b718110c7d1</sys_id>
+            <sys_id>09cd95444fc113005cf63b718110c735</sys_id>
             <sys_mod_count>0</sys_mod_count>
             <sys_name>x_195638_cisc475_s_scores</sys_name>
             <sys_package display_value="CISC475 Sprint Grades" source="x_195638_cisc475_s">80ae9f674f3013005cf63b718110c763</sys_package>
@@ -99,7 +84,7 @@
             <sys_scope display_value="CISC475 Sprint Grades">80ae9f674f3013005cf63b718110c763</sys_scope>
             <sys_update_name>sys_ui_list_x_195638_cisc475_s_scores_null</sys_update_name>
             <sys_updated_by>admin</sys_updated_by>
-            <sys_updated_on>2018-03-19 17:42:54</sys_updated_on>
+            <sys_updated_on>2018-03-19 22:17:27</sys_updated_on>
             <sys_user/>
             <view display_value="Default view" name="NULL">Default view</view>
             <view_name/>

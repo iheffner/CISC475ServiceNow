@@ -32,14 +32,25 @@
 		updateRecord={score: 2};
 
 	}
-	c.addScore=function(student,sprint){
-	var newRecord={scorer:c.data.currentUser,scoree:student,sprint:sprint,score:3}
+	c.addScore=function(student,name,sprint){
+	var newRecord={scorer:c.data.currentUser,scoree:student,sprint:sprint,score:0}
+	spModal.open({
+		message: 'Add a score for '+name+' and sprint# '+sprint,
+		title: 'Add record',
+		input: true,
+		value: 0
+	}).then(function(newscore){
+		 if (newscore<1 || newscore>10){
+			 spModal.open({message: 'Values must be between 1 and 10'});
+			 return;
+		 }
+		newRecord.score=newscore;
 	$http.post('/api/now/table/x_195638_cisc475_s_scores',newRecord).then(
 		function(result){
 			console.log(result);
 			c.server.update();
 		});
-						
+	});						
 	};
 }]]></client_script>
         <controller_as>c</controller_as>
@@ -86,10 +97,16 @@
 			
 			function init(){
 				data.currentUser=gs.getUserID();
+				var userRec=new GlideRecordSecure('x_195638_cisc475_s_students');
+				userRec.addQuery('user.sys_id',gs.getUserID());
+				userRec.query();
+				userRec.next();
+				var group=userRec.getValue('sprintgroup');
+				$sp.log(group);
 				data.sprints=[1,2,3,4,5,6];
 				data.sp_page = $sp.getDisplayValue('sp_page'); // gets the page's ID
 				var gr = new GlideRecordSecure('x_195638_cisc475_s_students');
-				gr.addQuery('sprintgroup.group_name', '=', 'Test Group');
+				gr.addQuery('sprintgroup.sys_id', '=', group);
 				gr.addQuery('user.sys_id','!=',gs.getUserID());
 				
 				gr.setLimit(options.maximum_entries);
@@ -119,14 +136,14 @@
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-03-19 00:09:02</sys_created_on>
         <sys_id>fdbd60bf4ff013005cf63b718110c7e1</sys_id>
-        <sys_mod_count>252</sys_mod_count>
+        <sys_mod_count>265</sys_mod_count>
         <sys_name>Fancy List</sys_name>
         <sys_package display_value="CISC475 Sprint Grades" source="x_195638_cisc475_s">80ae9f674f3013005cf63b718110c763</sys_package>
         <sys_policy/>
         <sys_scope display_value="CISC475 Sprint Grades">80ae9f674f3013005cf63b718110c763</sys_scope>
         <sys_update_name>sp_widget_fdbd60bf4ff013005cf63b718110c7e1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-03-19 21:12:06</sys_updated_on>
+        <sys_updated_on>2018-03-19 22:09:18</sys_updated_on>
         <template><![CDATA[
 <div >
   <table class='table'>
@@ -140,7 +157,7 @@
       </td>
       <td ng-repeat='score in item.scores' class='clickable'>
         <span ng-show='score.score>0' ng-click='c.updateScore(score.sys_id,item.display_field,score.sprint,score.score)'>{{score.score}}</span>
-        <span ng-show='score.score==0' ng-click='c.addScore(item.sys_id,score.sprint)'>Add Score</span>
+        <span ng-show='score.score==0' ng-click='c.addScore(item.sys_id,item.display_field,score.sprint)'>Add Score</span>
       </td>
     </tr>
     </tbody>
