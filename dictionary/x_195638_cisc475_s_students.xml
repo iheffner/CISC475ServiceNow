@@ -3,7 +3,7 @@
     <element label="Students" max_length="40" name="x_195638_cisc475_s_students" type="collection">
         <element label="Registered" max_length="40" name="registered" type="boolean"/>
         <element label="SprintGroup" max_length="32" name="sprintgroup" reference="x_195638_cisc475_s_group" type="reference"/>
-        <element label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
+        <element display="true" label="User" max_length="32" name="user" reference="sys_user" type="reference"/>
         <index name="index">
             <element name="sprintgroup"/>
         </index>

@@ -2,8 +2,19 @@
 <database>
     <element label="Scores" max_length="40" name="x_195638_cisc475_s_scores" type="collection">
         <element label="Comment" max_length="40" name="comment" type="string"/>
-        <element choice="1" label="Score" max_length="40" name="score" type="choice">
-            <choice/>
+        <element choice="3" default="0" label="Score" max_length="40" name="score" type="choice">
+            <choice>
+                <element label="0" sequence="0" value="0"/>
+                <element label="1" sequence="1" value="1"/>
+                <element label="2" sequence="2" value="2"/>
+                <element label="3" sequence="3" value="3"/>
+                <element label="4" sequence="4" value="4"/>
+                <element label="5" sequence="5" value="5"/>
+                <element label="6" sequence="6" value="6"/>
+                <element label="7" sequence="7" value="7"/>
+                <element label="8" sequence="8" value="8"/>
+                <element label="9" sequence="9" value="9"/>
+            </choice>
         </element>
         <element label="Scoree" max_length="32" name="scoree" reference="x_195638_cisc475_s_students" type="reference"/>
         <element label="Scorer" max_length="32" name="scorer" reference="x_195638_cisc475_s_students" type="reference"/>

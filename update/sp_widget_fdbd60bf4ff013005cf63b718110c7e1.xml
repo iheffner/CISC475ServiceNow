@@ -2,10 +2,49 @@
 <record_update table="sp_widget">
     <sp_widget action="INSERT_OR_UPDATE">
         <category>custom</category>
-        <client_script><![CDATA[function() {  /* widget controller */  var c = this;}]]></client_script>
+        <client_script><![CDATA[function($http,spModal) {
+  /* widget controller */
+  var c = this;
+	
+  c.updateScore=function(recid,user,sprint,oldscore)	{
+ spModal.open({
+           message: 'Update Score for '+user+'  Sprint: '+sprint,
+           title: 'Update',
+	 input: true,
+	 value: oldscore
+	 
+       }).then(
+	 function(newscore){
+		 if (newscore<1 || newscore>10){
+			 spModal.open({message: 'Values must be between 1 and 10'});
+			 return;
+		 }
+		 if (newscore!=oldscore){
+				$http.put('/api/now/table/x_195638_cisc475_s_scores/'+recid,{score: newscore}).then(
+					function(result){
+						console.log(result);
+						c.server.update();
+				});			 
+		 }
+	 });
+		
+		
+		updateRecord={score: 2};
+
+	}
+	c.addScore=function(student,sprint){
+	var newRecord={scorer:c.data.currentUser,scoree:student,sprint:sprint,score:3}
+	$http.post('/api/now/table/x_195638_cisc475_s_scores',newRecord).then(
+		function(result){
+			console.log(result);
+			c.server.update();
+		});
+						
+	};
+}]]></client_script>
         <controller_as>c</controller_as>
         <css>.table{font-size:x-large;}
-.table tbody tr:hover{
+.table .clickable:hover{
   font-weight:bold;
 }</css>
         <data_table>sp_instance_vlist</data_table>
@@ -14,73 +53,111 @@
         <docs/>
         <field_list>table,filter,maximum_entries,display_field,order_by,order_direction,title,color,class_name,sp_page,order</field_list>
         <has_preview>false</has_preview>
-        <id>fancy_list</id>
+        <id>fancy-list</id>
         <internal>false</internal>
         <link/>
         <name>Fancy List</name>
-        <option_schema/>
+        <option_schema>[]</option_schema>
         <public>true</public>
         <roles/>
         <script><![CDATA[(function() {
-	if (!options.table)
-		return;
-	data.sprints=[1,2,3,4,5,6];
-	data.sp_page = $sp.getDisplayValue('sp_page'); // gets the page's ID
-	var gr = new GlideRecordSecure(options.table); 
-	if (options.filter)
-		gr.addEncodedQuery(options.filter);
-
-	if (options.order_direction == "asc")
-		gr.orderBy(options.order_by);
-	else
-		gr.orderByDesc(options.order_by);
-
-	gr.setLimit(options.maximum_entries);
-	gr.query();
-	data.list = [];
-	while (gr.next()) {
-		var record = {};
-		record.sys_id = gr.getValue('sys_id');
-		if (options.display_field)
-			record.display_field = gr.getDisplayValue(options.display_field);
-
-		if (data.sp_page)
-			record.url = "?id=" + data.sp_page + "&table=" + options.table + "&sys_id=" + record.sys_id + "&view=sp";
-		else
-			record.url = "";
-
-		data.list.push(record);
-	}
-})()]]></script>
+	
+	function getScores(student){
+		var dataItems=data.sprints.map(
+		function(item) {return {sprint:item,score:0,sys_id:null};});
+				
+				var gar=new GlideRecordSecure('x_195638_cisc475_s_scores');
+				gar.addQuery('scorer.user','=',gs.getUserID());
+				gar.addQuery('scoree','=',student);
+				gar.query();
+				while (gar.next()){
+					var sprint=gar.getValue('sprint');
+					var score=gar.getValue('score');
+					var id=gar.getValue('sys_id');					
+					for (var i=0;i<dataItems.length;i++){
+						if (dataItems[i].sprint==sprint){
+							dataItems[i].score=score;
+						  dataItems[i].sys_id=id;
+						}
+					}
+				}
+				return dataItems;
+			}
+			
+			function init(){
+				data.currentUser=gs.getUserID();
+				data.sprints=[1,2,3,4,5,6];
+				data.sp_page = $sp.getDisplayValue('sp_page'); // gets the page's ID
+				var gr = new GlideRecordSecure('x_195638_cisc475_s_students');
+				gr.addQuery('sprintgroup.group_name', '=', 'Test Group');
+				gr.addQuery('user.sys_id','!=',gs.getUserID());
+				
+				gr.setLimit(options.maximum_entries);
+				gr.query();
+				data.list = [];
+				
+				
+				while (gr.next()) {
+					
+					var record = {};
+						record.sys_id = gr.getValue('sys_id');
+						record.display_field = gr.getDisplayValue('user');
+						
+						if (data.sp_page)
+							record.url = "?id=" + data.sp_page + "&table=" + options.table + "&sys_id=" + record.sys_id + "&view=sp";
+						else
+							record.url = "";
+						record.scores=getScores(record.sys_id);
+						data.list.push(record);
+					}
+				}
+				
+				init();
+			})()]]></script>
         <servicenow>false</servicenow>
         <sys_class_name>sp_widget</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-03-19 00:09:02</sys_created_on>
         <sys_id>fdbd60bf4ff013005cf63b718110c7e1</sys_id>
-        <sys_mod_count>42</sys_mod_count>
+        <sys_mod_count>252</sys_mod_count>
         <sys_name>Fancy List</sys_name>
         <sys_package display_value="CISC475 Sprint Grades" source="x_195638_cisc475_s">80ae9f674f3013005cf63b718110c763</sys_package>
         <sys_policy/>
         <sys_scope display_value="CISC475 Sprint Grades">80ae9f674f3013005cf63b718110c763</sys_scope>
         <sys_update_name>sp_widget_fdbd60bf4ff013005cf63b718110c7e1</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-03-19 00:58:38</sys_updated_on>
+        <sys_updated_on>2018-03-19 21:12:06</sys_updated_on>
         <template><![CDATA[
 <div >
   <table class='table'>
     <thead>
-      <tr><td>Group Member</td><td ng-repeat='sprint in data.sprints'>Sprint {{sprint}}</td></tr>
+      <tr><td>{{options.title}}</td><td ng-repeat='sprint in data.sprints'>Sprint {{sprint}}</td></tr>
     </thead>
   <tbody>
     <tr ng-repeat="item in data.list">
       <td>
-      	<a ng-href="{{item.url}}">{{item.display_field}}</a>
+      	{{item.display_field}}
       </td>
-      <td ng-repeat='sprint in data.sprints'>N/A</td>
+      <td ng-repeat='score in item.scores' class='clickable'>
+        <span ng-show='score.score>0' ng-click='c.updateScore(score.sys_id,item.display_field,score.sprint,score.score)'>{{score.score}}</span>
+        <span ng-show='score.score==0' ng-click='c.addScore(item.sys_id,score.sprint)'>Add Score</span>
+      </td>
     </tr>
     </tbody>
   </table>
 </div>
+<script type='text/ng-template' id='modalContent.html'>
+	<div class='modal-header'>
+  <h3>Header</h3>
+  </div>
+  <div class='modal-body' id='modal-body'>
+  What?
+  </div>
+  <div class='modal-footer'>
+  <button class='btn btn-primary' type='button'>Update</button>
+  <button class='btn btn-warning' type='button'>Cancel</button>
+  </div>
+</script>
 ]]></template>
     </sp_widget>
 </record_update>
