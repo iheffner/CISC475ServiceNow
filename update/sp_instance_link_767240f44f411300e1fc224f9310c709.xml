@@ -5,35 +5,35 @@
         <class_name/>
         <color>default</color>
         <css/>
-        <glyph>arrow-left</glyph>
+        <glyph>user</glyph>
         <id/>
         <kb_article/>
         <kb_category/>
         <kb_topic/>
-        <order>3</order>
+        <order>2</order>
         <roles/>
         <sc_cat_item/>
         <sc_category/>
-        <short_description>Return to the main application</short_description>
+        <short_description>Reset app data and load sample data</short_description>
         <size>md</size>
         <sp_column display_value="1">596cd9c04fc113005cf63b718110c7e4</sp_column>
-        <sp_page display_value="cisc475_home">e16c18f34ff013005cf63b718110c7dd</sp_page>
-        <sp_widget display_value="Icon Link">3caa67afcb13020000f8d856634c9c2e</sp_widget>
+        <sp_page/>
+        <sp_widget display_value="Icon Rest Call">ddb004384f411300e1fc224f9310c78d</sp_widget>
         <sys_class_name>sp_instance_link</sys_class_name>
         <sys_created_by>admin</sys_created_by>
-        <sys_created_on>2018-03-19 22:46:15</sys_created_on>
-        <sys_id>0f54a9c84fc113005cf63b718110c799</sys_id>
-        <sys_mod_count>7</sys_mod_count>
-        <sys_name>Leave Admin</sys_name>
+        <sys_created_on>2018-03-21 23:34:04</sys_created_on>
+        <sys_id>767240f44f411300e1fc224f9310c709</sys_id>
+        <sys_mod_count>1</sys_mod_count>
+        <sys_name>Reset</sys_name>
         <sys_package display_value="CISC475 Sprint Grades" source="x_195638_cisc475_s">80ae9f674f3013005cf63b718110c763</sys_package>
         <sys_policy/>
         <sys_scope display_value="CISC475 Sprint Grades">80ae9f674f3013005cf63b718110c763</sys_scope>
-        <sys_update_name>sp_instance_link_0f54a9c84fc113005cf63b718110c799</sys_update_name>
+        <sys_update_name>sp_instance_link_767240f44f411300e1fc224f9310c709</sys_update_name>
         <sys_updated_by>admin</sys_updated_by>
-        <sys_updated_on>2018-03-21 23:34:04</sys_updated_on>
-        <title>Leave Admin</title>
-        <type>page</type>
-        <url/>
+        <sys_updated_on>2018-03-21 23:35:11</sys_updated_on>
+        <title>Reset</title>
+        <type>url</type>
+        <url>https://dev53488.service-now.com/api/x_195638_cisc475_s/createsampledata</url>
         <widget_parameters><![CDATA[{
 	"link_template": {
 		"value": "Circle Icon",
@@ -41,5 +41,5 @@
 	}
 }]]></widget_parameters>
     </sp_instance_link>
-    <sys_translated_text action="delete_multiple" query="documentkey=0f54a9c84fc113005cf63b718110c799"/>
+    <sys_translated_text action="delete_multiple" query="documentkey=767240f44f411300e1fc224f9310c709"/>
 </record_update>

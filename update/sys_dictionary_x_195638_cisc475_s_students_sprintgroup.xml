@@ -54,7 +54,7 @@
         <sys_class_name>sys_dictionary</sys_class_name>
         <sys_created_by>admin</sys_created_by>
         <sys_created_on>2018-03-18 20:56:57</sys_created_on>
-        <sys_id>c416954c4f8113005cf63b718110c712</sys_id>
+        <sys_id>978daf284f011300e1fc224f9310c748</sys_id>
         <sys_mod_count>0</sys_mod_count>
         <sys_name>SprintGroup</sys_name>
         <sys_package display_value="CISC475 Sprint Grades" source="x_195638_cisc475_s">80ae9f674f3013005cf63b718110c763</sys_package>
@@ -62,7 +62,7 @@
         <sys_scope display_value="CISC475 Sprint Grades">80ae9f674f3013005cf63b718110c763</sys_scope>
         <sys_update_name>sys_dictionary_x_195638_cisc475_s_students_sprintgroup</sys_update_name>
         <sys_updated_by>system</sys_updated_by>
-        <sys_updated_on>2018-03-19 21:43:50</sys_updated_on>
+        <sys_updated_on>2018-03-21 22:02:41</sys_updated_on>
         <table_reference>false</table_reference>
         <text_index>false</text_index>
         <unique>false</unique>
